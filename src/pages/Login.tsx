@@ -1,20 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
- interface FormProps {
-  onSubmit: (data: FormData) => void;
+interface FormProps {
+  onSubmit: (data: FormData) => boolean;
 }
 
 export interface FormData {
   email: string;
-  password:string
+  password: string;
 }
 
 const Login: React.FC<FormProps> = ({ onSubmit }) => {
+  const navigate = useNavigate();
 
-   
   const [formData, setFormData] = useState<FormData>({
     email: "",
-    password:""
+    password: "",
   });
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -24,10 +25,15 @@ const Login: React.FC<FormProps> = ({ onSubmit }) => {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    onSubmit(formData);
+    if (onSubmit(formData)) {
+      navigate("/");
+    }else {
+      console.log("password or something went wrong")
+    }
   }
+  // console.log(formData)
   return (
-    <div className=" flex flex-col justify-center items-center">
+    <div className=" flex flex-col justify-center items-center h-screen">
       <div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
           Sign in to your account

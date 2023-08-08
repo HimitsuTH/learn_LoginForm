@@ -1,16 +1,15 @@
-import React from 'react'
-import Login from './pages/Login';
-import { FormData } from './pages/Login';
+import React from "react";
+
+import Home from "./pages/Home";
+
 
 
 function App() {
-  function handleSubmit(formData: FormData) {
-    console.log(formData);
-  }
+
 
   return (
-    <div className=' h-screen grid place-items-center'>
-      <Login onSubmit={handleSubmit} />
+    <div className="">
+      <Home/>
     </div>
   );
 }
