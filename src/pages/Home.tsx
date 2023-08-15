@@ -7,9 +7,12 @@ import Navbar from "../components/Navbar";
 const Home = () => {
   return (
     <div>
-      <div className=" flex h-screen relative">
+      <div className="flex h-screen">
         <Menu />
-        <Navbar />
+        <main className=" flex flex-col w-full">
+          <Navbar />
+          <div className="p-5  h-full"><p>Hello World</p></div>
+        </main>
       </div>
     </div>
   );

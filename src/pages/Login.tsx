@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavigateFunction } from "react-router-dom";
 
 interface FormProps {
   onSubmit: (data: FormData) => boolean;
@@ -11,7 +11,7 @@ export interface FormData {
 }
 
 const Login: React.FC<FormProps> = ({ onSubmit }) => {
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   const [formData, setFormData] = useState<FormData>({
     email: "",
@@ -27,8 +27,8 @@ const Login: React.FC<FormProps> = ({ onSubmit }) => {
     event.preventDefault();
     if (onSubmit(formData)) {
       navigate("/");
-    }else {
-      console.log("password or something went wrong")
+    } else {
+      console.log("password or something went wrong");
     }
   }
   // console.log(formData)
