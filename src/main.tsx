@@ -6,6 +6,8 @@ import "./index.css";
 import Login from "./pages/Login";
 import { FormData } from "./pages/Login";
 
+import { ErrorPage } from "./pages/ErrorPage.tsx";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function handleSubmit(formData: FormData) {
@@ -20,12 +22,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <div>Error</div>,
+    errorElement: <ErrorPage/>,
   },
   {
     path: "login",
     element: <Login onSubmit={handleSubmit} />,
-    errorElement: <div>Error</div>,
+    errorElement: <ErrorPage/>,
   },
 ]);
 

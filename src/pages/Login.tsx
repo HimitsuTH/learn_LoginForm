@@ -33,14 +33,14 @@ const Login: React.FC<FormProps> = ({ onSubmit }) => {
   }
   // console.log(formData)
   return (
-    <div className=" flex flex-col justify-center items-center h-screen">
+    <div className=" flex flex-col justify-center items-center h-screen  ">
       <div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
           Sign in to your account
         </h2>
       </div>
       <form
-        className="mt-8 space-y-6"
+        className="mt-8 space-y-6 "
         action="#"
         method="POST"
         onSubmit={handleSubmit}
