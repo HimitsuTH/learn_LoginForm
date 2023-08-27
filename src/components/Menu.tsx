@@ -18,14 +18,22 @@ const Menu = () => {
               Dashboard
             </NavLink>
             <NavLink
-              to="/1"
-              className="d-menu-list cursor-pointer p-2 rounded-md mt-2 hover:bg-white hover:text-black-3"
+              to="/user"
+              className={({ isActive }: { isActive: boolean }) =>
+                isActive
+                  ? "d-menu-list cursor-pointer p-2 rounded-md mt-2 bg-white text-black-3"
+                  : "d-menu-list cursor-pointer p-2 rounded-md mt-2 hover:bg-white hover:text-black-3"
+              }
             >
               User
             </NavLink>
             <NavLink
               to="/2"
-              className="d-menu-list cursor-pointer p-2 rounded-md mt-2 hover:bg-white hover:text-black-3"
+              className={({ isActive }: { isActive: boolean }) =>
+                isActive
+                  ? "d-menu-list cursor-pointer p-2 rounded-md mt-2 bg-white text-black-3"
+                  : "d-menu-list cursor-pointer p-2 rounded-md mt-2 hover:bg-white hover:text-black-3"
+              }
             >
               Help
             </NavLink>

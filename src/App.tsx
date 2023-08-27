@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 
+//pages
 import Home from "./pages/Home";
 
 function App() {
