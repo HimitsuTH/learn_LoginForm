@@ -2,20 +2,21 @@ import React from "react";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 
-//pages
-import Home from "./pages/Home";
+import { Outlet } from "react-router-dom";
+
+
 
 function App() {
   return (
-    <div className=" ">
+    <>
       <div className="flex h-screen">
         <Menu />
         <main className=" flex flex-col w-full">
           <Navbar />
-          <Home />
+          <Outlet/>
         </main>
       </div>
-    </div>
+    </>
   );
 }
 
